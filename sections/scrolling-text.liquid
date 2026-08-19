@@ -1,11 +1,7 @@
 {%- if section.settings.text != blank -%}
   {%- render 'section-spacing-collapsing' -%}
 
-
-
-  
-{%- render 'section-color-css' -%}
-<style>
+  <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.125rem{% elsif section.settings.text_size == 'small' %}2.5rem{% elsif section.settings.text_size == 'medium' %}3.75rem{% elsif section.settings.text_size == 'large' %}5rem{% else %}7.5rem{% endif %};
@@ -51,10 +47,7 @@
   "class": "shopify-section--scrolling-text",
   "tag": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "groups": ["header", "custom.overlay"]
   },
   "settings": [
     {
@@ -164,36 +157,6 @@
       "type": "color_background",
       "id": "text_gradient",
       "label": "Text gradient"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "presets": [

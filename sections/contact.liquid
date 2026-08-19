@@ -1,11 +1,7 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- assign text_position = section.settings.text_position -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} {
     --section-stack-intro: {% if text_position == 'center' %}66.6667%{% elsif section.settings.contact_form_size == 'small' %}50%{% else %}41.6667%{% endif %};
@@ -64,7 +60,6 @@
             </div>
 
             {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
               {%- assign field_title = block.settings.title -%}
 
               {%- if field_title == blank -%}
@@ -113,10 +108,7 @@
   "class": "shopify-section--contact",
   "tag": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "groups": ["header", "custom.overlay"]
   },
   "settings": [
     {
@@ -232,16 +224,6 @@
       "type": "color",
       "id": "button_text_color",
       "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -266,30 +248,6 @@
           "id": "required",
           "label": "Required",
           "default": false
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -309,30 +267,6 @@
           "label": "Values",
           "info": "Separate each value by a comma.",
           "default": "value 1, value 2, value 3"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

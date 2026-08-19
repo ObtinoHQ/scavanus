@@ -1,8 +1,4 @@
-
-{%- render 'section-color-css' -%}
 <div class="container">
-
-
   {%- paginate customer.addresses by 16 -%}
     {%- if customer.addresses_count == 0 -%}
       <div class="empty-state">

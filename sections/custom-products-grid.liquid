@@ -1,9 +1,5 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} .section {
     padding-top: 60px;
@@ -21,7 +17,7 @@
     max-width: calc(50% - 12px);
   }
   #shopify-section-{{ section.id }} .custom-products-grid product-card {
-    background: {{ section.settings.background | default: 'rgba(247, 245, 242, 1)' }};
+    background: rgba(247, 245, 242, 1);
     border-radius: 12px;
     overflow: hidden;
     padding: 8px 8px 15px 8px;
@@ -155,7 +151,6 @@
 
     <div id="custom-products-grid-{{ section.id }}" class="custom-products-grid">
       {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
         {%- capture is_block_visible -%}{%- render 'block-market-check', block: block -%}{%- endcapture -%}
         {%- if is_block_visible contains 'false' -%}{%- continue -%}{%- endif -%}
         {%- if block.settings.product == blank -%}{%- continue -%}{%- endif -%}
@@ -202,13 +197,8 @@
   "class": "shopify-section--custom-products-grid",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "max_blocks": 12,
   "settings": [
@@ -245,14 +235,8 @@
       "id": "products_per_row_mobile",
       "label": "Products per row (mobile)",
       "options": [
-        {
-          "value": "1",
-          "label": "1"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        }
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
       ],
       "default": "2"
     },
@@ -269,22 +253,10 @@
       "id": "image_aspect_ratio",
       "label": "Image aspect ratio",
       "options": [
-        {
-          "value": "auto",
-          "label": "Natural"
-        },
-        {
-          "value": "1:1",
-          "label": "Square (1:1)"
-        },
-        {
-          "value": "4:5",
-          "label": "Portrait (4:5)"
-        },
-        {
-          "value": "0.85",
-          "label": "Custom (0.85)"
-        }
+        { "value": "auto", "label": "Natural" },
+        { "value": "1:1", "label": "Square (1:1)" },
+        { "value": "4:5", "label": "Portrait (4:5)" },
+        { "value": "0.85", "label": "Custom (0.85)" }
       ],
       "default": "0.85"
     },
@@ -293,14 +265,8 @@
       "id": "image_fit",
       "label": "Image fit",
       "options": [
-        {
-          "value": "cover",
-          "label": "Fill (Cover)"
-        },
-        {
-          "value": "contain",
-          "label": "Fit (Contain)"
-        }
+        { "value": "cover", "label": "Fill (Cover)" },
+        { "value": "contain", "label": "Fit (Contain)" }
       ],
       "default": "cover"
     },
@@ -352,44 +318,12 @@
       "id": "market_visibility",
       "label": "Market visibility",
       "options": [
-        {
-          "value": "all",
-          "label": "Global (All Markets)"
-        },
-        {
-          "value": "denmark",
-          "label": "Denmark Only"
-        },
-        {
-          "value": "us_ca_mx",
-          "label": "US, CA & MX Only"
-        },
-        {
-          "value": "global_excluding_us_ca_mx",
-          "label": "Global (Exclude US, CA & MX)"
-        }
+        { "value": "all", "label": "Global (All Markets)" },
+        { "value": "denmark", "label": "Denmark Only" },
+        { "value": "us_ca_mx", "label": "US, CA & MX Only" },
+        { "value": "global_excluding_us_ca_mx", "label": "Global (Exclude US, CA & MX)" }
       ],
       "default": "all"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -416,48 +350,12 @@
           "id": "market_visibility",
           "label": "Market visibility",
           "options": [
-            {
-              "value": "all",
-              "label": "Global (All Markets)"
-            },
-            {
-              "value": "denmark",
-              "label": "Denmark Only"
-            },
-            {
-              "value": "us_ca_mx",
-              "label": "US, CA & MX Only"
-            },
-            {
-              "value": "global_excluding_us_ca_mx",
-              "label": "Global (Exclude US, CA & MX)"
-            }
+            { "value": "all", "label": "Global (All Markets)" },
+            { "value": "denmark", "label": "Denmark Only" },
+            { "value": "us_ca_mx", "label": "US, CA & MX Only" },
+            { "value": "global_excluding_us_ca_mx", "label": "Global (Exclude US, CA & MX)" }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }
@@ -467,18 +365,10 @@
       "name": "Custom products grid",
       "category": "Collection",
       "blocks": [
-        {
-          "type": "product_item"
-        },
-        {
-          "type": "product_item"
-        },
-        {
-          "type": "product_item"
-        },
-        {
-          "type": "product_item"
-        }
+        { "type": "product_item" },
+        { "type": "product_item" },
+        { "type": "product_item" },
+        { "type": "product_item" }
       ]
     }
   ]

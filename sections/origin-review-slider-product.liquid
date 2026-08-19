@@ -2,17 +2,9 @@
 {%- if reviews.size > 0 -%}
   {%- render 'section-spacing-collapsing' -%}
 
-
-
-  {%- liquid
-    assign review_card_bg = section.settings.card_background | default: section.settings.summary_card_background
-  -%}
-
   {%- assign scroll_area_id = 'review-scroll-area-' | append: section.id -%}
 
-  
-{%- render 'section-color-css' -%}
-<style>
+  <style>
     #shopify-section-{{ section.id }} {
       --origin-review-slider-mobile-card-width: 82vw;
       --origin-review-slider-desktop-card-width: calc((100% - (var(--grid-gutter) * 2)) / 3);
@@ -36,7 +28,7 @@
       line-height: 1.25;
       font-weight: 500;
       max-width: 970px;
-      color: {% render 'setting-color', value: section.settings.heading_color, default: 'rgba(39, 39, 39, 1)' %};
+      color: rgba(39, 39, 39, 1);
       font-family: var(--heading-font-family);
     }
 
@@ -52,13 +44,13 @@
       height: 38px;
       min-width: 38px;
       min-height: 38px;
-      color: {% render 'setting-color', value: section.settings.heading_color, default: 'rgba(39, 39, 39, 1)' %};
+      color: rgba(39, 39, 39, 1);
       background: transparent;
     }
 
     #shopify-section-{{ section.id }} .origin-review-slider__nav .circle-button:hover,
     #shopify-section-{{ section.id }} .origin-review-slider__nav .circle-button:focus-visible {
-      color: {% render 'setting-color', value: section.settings.heading_color, default: 'rgba(39, 39, 39, 1)' %};
+      color: rgba(39, 39, 39, 1);
       background: transparent;
     }
 
@@ -68,7 +60,7 @@
     }
 
     #shopify-section-{{ section.id }} .origin-review-slider__summary {
-      background: {% render 'setting-color', value: review_card_bg, default: 'rgba(247, 245, 242, 1)' %};
+      background: rgba(247, 245, 242, 1);
       border-radius: 12px;
       padding: 20px;
       min-height: 320px;
@@ -196,7 +188,7 @@
       margin: 0;
       font-size: 14px;
       line-height: 1.3;
-      color: {% render 'setting-color', value: section.settings.text_color, default: 'rgba(72, 72, 72, 1)' %};
+      color: rgba(72, 72, 72, 1);
     }
     #shopify-section-{{ section.id }} .origin-review-slider__content {
       overflow: hidden;
@@ -220,7 +212,7 @@
     #shopify-section-{{ section.id }} .origin-review-slider__content p {
       font-size: 14px;
       line-height: 1.3;
-      color: {% render 'setting-color', value: section.settings.text_color, default: 'rgba(72, 72, 72, 1)' %};
+      color: rgba(72, 72, 72, 1);
     }
 
     #shopify-section-{{ section.id }} .origin-review-slider__author {
@@ -321,7 +313,7 @@
       }
 
       #shopify-section-{{ section.id }} .origin-review-slider__item {
-        background: {% render 'setting-color', value: review_card_bg, default: 'rgba(247, 245, 242, 1)' %};
+        background: rgba(247, 245, 242, 1);
         border-radius: 12px;
         padding: 16px;
         gap: 14px;
@@ -626,13 +618,8 @@
   "class": "shopify-section--origin-review-slider",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "settings": [
     {
@@ -736,36 +723,6 @@
       "id": "summary_card_background",
       "label": "Summary card background",
       "default": "#f4f2f0"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -795,30 +752,6 @@
           "id": "author",
           "label": "Author",
           "default": "Martin S."
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

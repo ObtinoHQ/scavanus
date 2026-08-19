@@ -1,15 +1,7 @@
 {%- render 'section-spacing-collapsing' -%}
 
 
-{%- for block in section.blocks -%}
-  {%- render 'block-color-css', block: block -%}
-{%- endfor -%}
 
-
-
-
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} .product-video-stories {
     display: grid;
@@ -27,14 +19,14 @@
     font-size: 32px;
     line-height: 1.15;
     font-weight: 500;
-    color: {% render 'setting-color', value: section.settings.heading_color, default: 'rgba(7, 7, 7, 1)' %};
+    color: rgba(7, 7, 7, 1);
   }
 
   #shopify-section-{{ section.id }} .product-video-stories__subheading {
     margin: 0;
     font-size: 16px;
     line-height: 1.3;
-    color: {% render 'setting-color', value: section.settings.text_color, default: 'rgba(72, 72, 72, 1)' %};
+    color: rgba(72, 72, 72, 1);
     text-align: center;
   }
 
@@ -107,7 +99,7 @@
   #shopify-section-{{ section.id }} .product-video-stories__modal-backdrop {
     position: absolute;
     inset: 0;
-    background: {% render 'setting-color', value: section.settings.card_background, default: 'rgb(0 0 0 / 0.65)' %};
+    background: rgb(0 0 0 / 0.65);
   }
 
   #shopify-section-{{ section.id }} .product-video-stories__modal-dialog {
@@ -118,7 +110,7 @@
     max-height: calc(100vh - 48px);
     border-radius: 12px;
     overflow: hidden;
-    background: {% render 'setting-color', value: section.settings.background, default: '#000000' %};
+    background: #000;
     box-shadow: 0 20px 60px rgb(0 0 0 / 0.4);
   }
 
@@ -134,7 +126,7 @@
     display: grid;
     place-items: center;
     background: rgb(0 0 0 / 0.6);
-    color: {% render 'setting-color', value: section.settings.button_text_color, default: '#ffffff' %};
+    color: #fff;
     cursor: pointer;
   }
 
@@ -187,7 +179,7 @@
 
     #shopify-section-{{ section.id }} .product-video-stories__subheading {
       font-size: 14px;
-      {% comment %} background: {{ section.settings.background | default: 'rgba(251, 251, 251, 1)' }}; {% endcomment %}
+      {% comment %} background: rgba(251, 251, 251, 1); {% endcomment %}
       border-radius: 12px;
       padding: 9px 40px;
     }
@@ -234,10 +226,20 @@
     assign is_sweden = true
   endif
 
+  assign is_norway = false
+  if localization.country.iso_code == 'NO'
+    assign is_norway = true
+  endif
+  if localization.language.iso_code == 'no' or path_start == '/no-' or path_start == '/no/'
+    assign is_norway = true
+  endif
+
   if market_code == 'us_ca_mx' and product.metafields.custom.videos_us_ca_mx.value != blank
     assign videos_meta = product.metafields.custom.videos_us_ca_mx.value
   elsif is_sweden and product.metafields.custom.videos_se.value != blank
     assign videos_meta = product.metafields.custom.videos_se.value
+  elsif is_norway and product.metafields.custom.videos_no.value != blank
+    assign videos_meta = product.metafields.custom.videos_no.value
   elsif is_english and product.metafields.custom.videos_en_global.value != blank
     assign videos_meta = product.metafields.custom.videos_en_global.value
   else
@@ -558,56 +560,6 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "97.1% recommend scanovus iron machine after 30 days"
-    },
-    {
-      "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set."
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -645,30 +597,6 @@
           "id": "video_popup_title",
           "label": "Popup video title",
           "default": "Story video"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

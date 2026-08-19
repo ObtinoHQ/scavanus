@@ -1,9 +1,5 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} .section {
     --calculated-section-spacing-inline: 80px;
@@ -742,7 +738,6 @@
     <div class="product">
       {%- capture left_collapsible_blocks -%}
         {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
           {%- if block.type == 'collapsible_text' -%}
             {%- if block.settings.title != blank and block.settings.content != blank or block.settings.page.content != blank -%}
               {% if block.settings.check1 == true %}
@@ -860,33 +855,7 @@ quick buy information in a template, that will be extracted in JS, but ensure it
     {
       "type": "vendor",
       "name": "Vendor",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "title",
@@ -924,63 +893,13 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "h2"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
     {
       "type": "sku",
       "name": "SKU",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "badges",
@@ -990,30 +909,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
         {
           "type": "paragraph",
           "content": "Use metafields to add custom badges. [Learn more](https://support.maestrooo.com/article/75-collection-displaying-custom-label)"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1055,30 +950,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1090,30 +961,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
         {
           "type": "paragraph",
           "content": "To display payment installments, your store needs to support Shop Pay Installments. [Learn more](https://help.shopify.com/en/manual/payments/shop-pay-installments)"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1131,30 +978,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "id": "show_empty",
           "label": "Show if no reviews",
           "default": false
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1168,30 +991,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "id": "rating_text",
           "label": "Rating text",
           "default": "4.7 out of 5 (based on 400+ reviews)"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1237,30 +1036,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "picto-timer"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1373,62 +1148,12 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "picto-shield"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
     {
       "type": "separator",
-      "name": "Separator",
-      "settings": [
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
-        }
-      ]
+      "name": "Separator"
     },
     {
       "type": "description",
@@ -1751,30 +1476,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1843,30 +1544,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "id": "size_chart_page",
           "label": "Size chart page",
           "info": "Feature a page for size option"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -1920,30 +1597,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "swatch"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2001,30 +1654,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "id": "max_length",
           "label": "Maximum number of characters",
           "visible_if": "{{ block.settings.type == 'text' }}"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2064,30 +1693,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2099,30 +1704,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
         {
           "type": "paragraph",
           "content": "Volume pricing is only available to Shopify Plus merchants. [Learn more](https://help.shopify.com/en/manual/b2b/catalogs/quantity-pricing#volume-pricing)"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2140,30 +1721,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "max": 100,
           "step": 1,
           "default": 0
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2251,30 +1808,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2286,30 +1819,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
         {
           "type": "paragraph",
           "content": "Allow your customers to see availability in retail stores by [setting up local pickup](https://help.shopify.com/en/manual/sell-in-person/shopify-pos/order-management/local-pickup-for-online-orders)."
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2350,30 +1859,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2715,30 +2200,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2808,30 +2269,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "all"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2909,20 +2346,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "type": "color",
           "id": "text_color",
           "label": "Text"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -2935,30 +2358,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "id": "liquid",
           "label": "Liquid",
           "info": "Add app snippets or other Liquid code to create advanced customizations."
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -3005,16 +2404,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "type": "color",
           "id": "text_color",
           "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -3061,16 +2450,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "type": "color",
           "id": "text_color",
           "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -3416,20 +2795,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
           "id": "text_color",
           "label": "Text",
           "default": "#00a341"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -3460,68 +2825,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
             }
           ],
           "default": "start"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
-        }
-      ]
-    },
-    {
-      "type": "countdown_timer",
-      "name": "Countdown timer",
-      "settings": [
-        {
-          "type": "text",
-          "id": "prefix_text",
-          "label": "Prefix text",
-          "default": "Udløber om:"
-        },
-        {
-          "type": "number",
-          "id": "evergreen_hours",
-          "label": "Timer duration (hours)",
-          "info": "Set to 0 to use fixed end date below.",
-          "default": 93
-        },
-        {
-          "type": "text",
-          "id": "end_date",
-          "label": "End date/time",
-          "info": "Format: YYYY-MM-DD HH:MM:SS (e.g. 2026-12-31 23:59:59)",
-          "default": "2026-12-31 23:59:59"
-        },
-        {
-          "type": "color",
-          "id": "bg_color",
-          "label": "Background color",
-          "default": "#FDEDF5"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text color",
-          "default": "#7A0C2E"
         }
       ]
     }
@@ -3725,51 +3028,6 @@ quick buy information in a template, that will be extracted in JS, but ensure it
       "type": "color",
       "id": "input_text_color",
       "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ]
 }

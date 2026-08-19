@@ -1,8 +1,4 @@
-
-{%- render 'section-color-css' -%}
 <div class="container">
-
-
   {%- if cart.item_count == 0 -%}
     <div class="empty-state">
       <div class="empty-state__icon-wrapper">
@@ -92,7 +88,6 @@
           <safe-sticky class="cart-order__recap v-stack gap-6">
             <form action="{{ routes.cart_url }}" method="POST" class="cart-form rounded">
               {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
                 {%- case block.type -%}
                   {%- when '@app' -%}
                     {%- render block -%}
@@ -239,30 +234,6 @@
           "id": "show_shipping_text",
           "label": "Show shipping/taxes text",
           "default": true
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -275,30 +246,6 @@
           "type": "number",
           "id": "max_length",
           "label": "Maximum number of characters"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -310,63 +257,13 @@
           "type": "richtext",
           "id": "content",
           "label": "Content"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
     {
       "type": "checkout_button",
       "name": "Checkout button",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "accelerated_buttons",
@@ -376,30 +273,6 @@
         {
           "type": "paragraph",
           "content": "Configure accelerated payment buttons in your [payment settings](https://www.shopify.com/admin/settings/payments)."
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -744,20 +617,6 @@
           "type": "color",
           "id": "text_color",
           "label": "Text"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }
@@ -780,56 +639,6 @@
       "id": "show_payment_icons",
       "label": "Show payment icons",
       "default": true
-    },
-    {
-      "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set."
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ]
 }

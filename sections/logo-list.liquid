@@ -1,11 +1,7 @@
 {%- if section.blocks.size > 0 -%}
   {%- render 'section-spacing-collapsing' -%}
 
-
-
-  
-{%- render 'section-color-css' -%}
-<style>
+  <style>
     #shopify-section-{{ section.id }} {
       --logo-list-item-max-size: 280px;
       --logo-list-grid: {% if section.settings.stack_mobile %}auto-flow 1fr / repeat(var(--logo-list-items-per-row), minmax(0, var(--logo-list-item-max-size))){% else %}1fr / auto-flow 52vw{% endif %};
@@ -47,7 +43,6 @@
 
       <reveal-items class="logo-list {% unless section.settings.stack_mobile %}scroll-area bleed sm:unbleed{% endunless %}">
         {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
           {%- liquid
             assign loading_strategy = nil
   
@@ -92,13 +87,8 @@
   "class": "shopify-section--logo-list",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "settings": [
     {
@@ -187,26 +177,6 @@
       "type": "color",
       "id": "logo_item_border",
       "label": "Logo border"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -234,30 +204,6 @@
           "type": "url",
           "id": "link",
           "label": "Link"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

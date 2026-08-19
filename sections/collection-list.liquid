@@ -1,15 +1,11 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- comment -%}
 ------------------------------------------------------------------------------------------------------------------------
 CSS
 ------------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} .collection-list {
     {%- if section.settings.stack_collections -%}
@@ -55,7 +51,6 @@ LIQUID
       <scroll-carousel selector=".collection-card" id="{{ scroll_area_id }}" class="scroll-area bleed {% if section.blocks.size > section.settings.collections_per_row %}is-scrollable{% endif %}">
         <collection-list class="collection-list">
           {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
             {%- assign collection = block.settings.collection -%}
             {%- assign collection_url = block.settings.url | default: collection.url -%}
 
@@ -136,13 +131,8 @@ LIQUID
   "class": "shopify-section--collection-list",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "settings": [
     {
@@ -244,26 +234,6 @@ LIQUID
       "type": "color_background",
       "id": "heading_gradient",
       "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -400,21 +370,6 @@ LIQUID
           "step": 1,
           "unit": "%",
           "default": 30
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

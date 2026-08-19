@@ -1,8 +1,4 @@
-
-{%- render 'section-color-css' -%}
 <div class="container">
-
-
   {%- if customer.orders.size == 0 -%}
     <div class="empty-state">
       <div class="empty-state__icon-wrapper">
@@ -30,7 +26,6 @@
         {%- paginate customer.orders by 16 -%}
           <div class="account__block-list">
             {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
               {%- case block.type -%}
                 {%- when '@app' -%}
                   {%- render block -%}
@@ -129,63 +124,13 @@
           "type": "liquid",
           "id": "liquid",
           "label": "Liquid"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
     {
       "type": "orders",
       "name": "Order list",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
-        }
-      ]
+      "limit": 1
     }
   ]
 }

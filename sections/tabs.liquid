@@ -1,11 +1,7 @@
 {%- if section.blocks.size > 0 -%}
   {%- render 'section-spacing-collapsing' -%}
 
-
-
-  
-{%- render 'section-color-css' -%}
-<style>
+  <style>
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
         --tabs-max-width: {% if section.settings.content_size == 'small' %}760{% elsif section.settings.content_size == 'medium' %}1000{% elsif section.settings.content_size == 'large' %}1260{% endif %}px;
@@ -38,7 +34,6 @@
         <div class="tabs-container">
           <div class="sm:hidden">
             {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
               {%- liquid
                 assign title = block.settings.title | default: block.settings.page.title
 
@@ -101,10 +96,7 @@
   "name": "Tabs",
   "class": "shopify-section--tabs",
   "disabled_on": {
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "groups": ["header", "custom.overlay"]
   },
   "max_blocks": 5,
   "settings": [
@@ -190,26 +182,6 @@
       "type": "color_background",
       "id": "heading_gradient",
       "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -234,30 +206,6 @@
           "id": "page",
           "label": "Page",
           "info": "Replaces inline content if specified."
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -276,30 +224,6 @@
           "id": "liquid",
           "label": "Liquid code",
           "default": "<p>Write Liquid code to create advanced customizations.</p>"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

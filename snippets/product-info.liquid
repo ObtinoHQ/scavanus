@@ -20,7 +20,6 @@ Supported variables
   {%- assign current_block_group_name = '' -%}
 
   {%- for block in section.blocks -%}
-    {%- render 'block-color-css', block: block -%}
     {%- liquid
       assign previous_block_index = forloop.index0 | minus: 1
       assign next_block_index = forloop.index0 | plus: 1
@@ -150,44 +149,22 @@ Supported variables
             {%- render 'product-trustpilot-rating', product: product, block: block -%}
           </div>
 
-        {%- when 'countdown_timer' -%}
-          {%- render 'countdown-timer',
-            end_date: block.settings.end_date,
-            evergreen_hours: block.settings.evergreen_hours,
-            prefix_text: block.settings.prefix_text,
-            bg_color: block.settings.bg_color,
-            text_color: block.settings.text_color,
-            block: block
-          -%}
-
         {%- when 'feature_pill' -%}
           <div class="feature_pill-block">
-          {%- assign pills = product.metafields.custom.icon_text_list.value -%}
-          {%- if pills != blank -%}
-            {%- for pill in pills -%}
-              {%- if pill.text != blank -%}
-                <div class="product-info__feature-pill">
-                  <span class="product-info__feature-pill-icon">
-                    {%- if pill.icon != blank -%}
-                      <img src="{{ pill.icon | image_url: width: 80 }}" alt="" width="20" height="20" loading="lazy">
-                    {%- endif -%}
-                  </span>
-                  <span>{{ pill.text }}</span>
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-          {%- elsif block.settings.text != blank -%}
-            <div class="product-info__feature-pill">
-              <span class="product-info__feature-pill-icon">
-                {%- if block.settings.custom_icon != blank -%}
-                  <img src="{{ block.settings.custom_icon | image_url: width: 80 }}" alt="" width="20" height="20" loading="lazy">
-                {%- elsif block.settings.icon != 'none' -%}
-                  {%- render 'icon' with block.settings.icon, width: 20, height: 20 -%}
-                {%- endif -%}
-              </span>
-              <span>{{ block.settings.text }}</span>
-            </div>
-          {%- endif -%}
+          {% assign pills = product.metafields.custom.icon_text_list.value %}
+          {% for pill in pills %}
+            {%- if pill.text != blank -%}
+              <div class="product-info__feature-pill">
+                <span class="product-info__feature-pill-icon">
+                  {%- if pill.icon != blank -%}
+                    {% comment %} {{- pill.icon | image_url: width: 40 | image_tag: loading: 'lazy', widths: '40', sizes: '40px' -}}     {% endcomment %}
+                    <img src="{{ pill.icon | img_url: 'large' }}" alt="">             
+                  {%- endif -%}
+                </span>
+                <span>{{ pill.text }}</span>
+              </div>
+            {%- endif -%}
+          {% endfor %}
           </div>
 
         {%- when 'icon_text_features' -%}
@@ -196,12 +173,7 @@ Supported variables
               <div class="product-info__icon-text-feature">
                 <span class="product-info__icon-text-feature-icon">
                   {%- if block.settings.item_1_custom_icon != blank -%}
-                  {%- assign custom_icon_url = block.settings.item_1_custom_icon | image_url -%}
-                  {%- if custom_icon_url contains '.svg' -%}
-                    <span class="product-info__icon-text-feature-icon-image" style="--svg-url: url('{{ custom_icon_url }}'); aspect-ratio: {{ block.settings.item_1_custom_icon.aspect_ratio | default: 1 }}; display: inline-block; background-color: currentColor; -webkit-mask: var(--svg-url) no-repeat center center / contain; mask: var(--svg-url) no-repeat center center / contain; width: 28px;"></span>
-                  {%- else -%}
                     {{- block.settings.item_1_custom_icon | image_url: width: 56 | image_tag: loading: 'lazy', widths: '28,56', sizes: '28px' -}}
-                  {%- endif -%}
                   {%- elsif block.settings.item_1_icon != 'none' -%}
                     {%- render 'icon' with block.settings.item_1_icon, width: 28, height: 28 -%}
                   {%- endif -%}
@@ -214,12 +186,7 @@ Supported variables
               <div class="product-info__icon-text-feature">
                 <span class="product-info__icon-text-feature-icon">
                   {%- if block.settings.item_2_custom_icon != blank -%}
-                  {%- assign custom_icon_url = block.settings.item_2_custom_icon | image_url -%}
-                  {%- if custom_icon_url contains '.svg' -%}
-                    <span class="product-info__icon-text-feature-icon-image" style="--svg-url: url('{{ custom_icon_url }}'); aspect-ratio: {{ block.settings.item_2_custom_icon.aspect_ratio | default: 1 }}; display: inline-block; background-color: currentColor; -webkit-mask: var(--svg-url) no-repeat center center / contain; mask: var(--svg-url) no-repeat center center / contain; width: 28px;"></span>
-                  {%- else -%}
                     {{- block.settings.item_2_custom_icon | image_url: width: 56 | image_tag: loading: 'lazy', widths: '28,56', sizes: '28px' -}}
-                  {%- endif -%}
                   {%- elsif block.settings.item_2_icon != 'none' -%}
                     {%- render 'icon' with block.settings.item_2_icon, width: 28, height: 28 -%}
                   {%- endif -%}
@@ -232,12 +199,7 @@ Supported variables
               <div class="product-info__icon-text-feature">
                 <span class="product-info__icon-text-feature-icon">
                   {%- if block.settings.item_3_custom_icon != blank -%}
-                  {%- assign custom_icon_url = block.settings.item_3_custom_icon | image_url -%}
-                  {%- if custom_icon_url contains '.svg' -%}
-                    <span class="product-info__icon-text-feature-icon-image" style="--svg-url: url('{{ custom_icon_url }}'); aspect-ratio: {{ block.settings.item_3_custom_icon.aspect_ratio | default: 1 }}; display: inline-block; background-color: currentColor; -webkit-mask: var(--svg-url) no-repeat center center / contain; mask: var(--svg-url) no-repeat center center / contain; width: 28px;"></span>
-                  {%- else -%}
                     {{- block.settings.item_3_custom_icon | image_url: width: 56 | image_tag: loading: 'lazy', widths: '28,56', sizes: '28px' -}}
-                  {%- endif -%}
                   {%- elsif block.settings.item_3_icon != 'none' -%}
                     {%- render 'icon' with block.settings.item_3_icon, width: 28, height: 28 -%}
                   {%- endif -%}
@@ -635,7 +597,7 @@ Supported variables
       <div class="product-info__block-group {{ block_group_class }}" data-group-type="{{ block_group_name }}">
     {%- endif -%}
 
-    <div id="shopify-block-{{ block.id }}" class="product-info__block-item" data-block-id="{{ block.id }}" data-block-type="{{ block.type | replace: '_', '-' }}" {% unless block.type == '@app' or block.type == 'accordion' %}{{ block.shopify_attributes }}{% endunless %}>
+    <div class="product-info__block-item" data-block-id="{{ block.id }}" data-block-type="{{ block.type | replace: '_', '-' }}" {% unless block.type == '@app' or block.type == 'accordion' %}{{ block.shopify_attributes }}{% endunless %}>
       {{- block_content -}}
     </div>
 

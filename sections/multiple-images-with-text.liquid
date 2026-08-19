@@ -1,7 +1,5 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- assign visible_images_count = section.blocks | map: 'settings' | where: 'image' | size -%}
 
 {%- comment -%}
@@ -10,8 +8,6 @@ CSS
 ------------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} {
     --multiple-images-with-text-max-width: 580px;
@@ -98,7 +94,6 @@ LIQUID
         {%- assign outputted_text_count = 0 -%}
 
         {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
           {%- if block.settings.subheading != blank or block.settings.title != blank or block.settings.content != blank -%}
             <div class="prose {% if outputted_text_count == 0 %}is-selected{% else %}reveal-invisible{% endif %}" {% if block.settings.image != blank %}image-id="image-{{ block.id }}"{% endif %} {{ block.shopify_attributes }}>
               {%- if block.settings.subheading != blank -%}
@@ -146,13 +141,8 @@ LIQUID
   "class": "shopify-section--multiple-images-with-text",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "max_blocks": 3,
   "settings": [
@@ -231,26 +221,6 @@ LIQUID
       "type": "color",
       "id": "button_text_color",
       "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -300,30 +270,6 @@ LIQUID
         {
           "type": "text",
           "id": "button_text",
-          "label": "Button text"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
           "label": "Button text"
         }
       ]

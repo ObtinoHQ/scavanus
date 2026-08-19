@@ -1,8 +1,4 @@
-
-{%- render 'section-color-css' -%}
 {%- comment -%}
-
-
 ------------------------------------------------------------------------------------------------------------------------
 LIQUID
 ------------------------------------------------------------------------------------------------------------------------
@@ -34,7 +30,6 @@ LIQUID
 
           <div class="v-stack gap-6">
             {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
               {%- case block.type -%}
                 {%- when '@app' -%}
                 {%- render block -%}
@@ -162,21 +157,6 @@ LIQUID
       "type": "color",
       "id": "button_text_color",
       "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -193,30 +173,6 @@ LIQUID
           "id": "return_to",
           "label": "Redirect upon login",
           "info": "Default to customer account page."
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -228,30 +184,6 @@ LIQUID
           "type": "liquid",
           "id": "liquid",
           "label": "Liquid"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

@@ -1,17 +1,13 @@
 {%- if section.blocks.size > 0 -%}
   {%- render 'section-spacing-collapsing' -%}
 
-
-
   {%- comment -%}
   ------------------------------------------------------------------------------------------------------------------------
   CSS
   ------------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
-  
-{%- render 'section-color-css' -%}
-<style>
+  <style>
     #shopify-section-{{ section.id }} {
       --timeline-nav-item-count: {{ section.blocks.size }};
     }
@@ -27,7 +23,6 @@
     <div class="timeline">
       <effect-carousel class="timeline__slider" id="timeline-carousel-{{ section.id }}">
         {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
           {%- liquid
             assign loading_strategy = nil
   
@@ -104,10 +99,7 @@
   "class": "shopify-section--timeline",
   "tag": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "groups": ["header", "custom.overlay"]
   },
   "settings": [
     {
@@ -135,36 +127,6 @@
       "type": "color",
       "id": "text_color",
       "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -200,30 +162,6 @@
           "id": "content",
           "label": "Content",
           "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

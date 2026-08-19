@@ -1,14 +1,10 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- comment -%}
 ------------------------------------------------------------------------------------------------------------------------
 CSS
 ------------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
-
-{%- render 'section-color-css' -%}
 <style>
   {%- assign block_size = section.settings.block_size -%}
 
@@ -54,7 +50,6 @@ LIQUID
 
       <image-link-blocks id="{{ scroll_area_id }}" class="image-link-blocks scroll-area bleed md:unbleed">
         {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
           {%- liquid
             assign loading_strategy = nil
   
@@ -138,13 +133,8 @@ LIQUID
   "class": "shopify-section--image-link-blocks",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "blocks": [
     {
@@ -206,16 +196,6 @@ LIQUID
           "unit": "%",
           "default": 0,
           "visible_if": "{{ block.settings.stretch_image }}"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }
@@ -301,26 +281,6 @@ LIQUID
       "type": "color_background",
       "id": "heading_gradient",
       "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "presets": [

@@ -1,11 +1,7 @@
 {%- unless section.settings.full_width -%}
   {%- render 'section-spacing-collapsing' -%}
-
-
 {%- endunless -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} {
     {%- if section.settings.full_width -%}
@@ -48,7 +44,6 @@
       <div class="{{ section.settings.mobile_text_position }} {{ section.settings.desktop_text_position }}">
         <div class="prose">
           {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
             {%- case block.type -%}
               {%- when 'subheading' -%}
                 {%- if block.settings.text != blank -%}
@@ -94,13 +89,8 @@
   "class": "shopify-section--image-with-text-overlay",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "max_blocks": 6,
   "settings": [
@@ -278,46 +268,6 @@
       "step": 1,
       "unit": "%",
       "default": 30
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
@@ -330,30 +280,6 @@
           "id": "text",
           "label": "Text",
           "default": "Subheading"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -402,30 +328,6 @@
             }
           ],
           "default": "h1"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -438,30 +340,6 @@
           "id": "content",
           "label": "Content",
           "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -474,30 +352,6 @@
           "id": "liquid",
           "label": "Liquid",
           "default": "<p>Use this text to output some custom Liquid code to include widget or dynamic code.</p>"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     },
@@ -565,20 +419,6 @@
           "type": "color",
           "id": "text_color",
           "label": "Text"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

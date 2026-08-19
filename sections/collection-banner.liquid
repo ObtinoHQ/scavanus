@@ -1,7 +1,5 @@
 {%- assign show_image = false -%}
 
-
-
 {%- if section.settings.show_collection_image and collection.image or section.settings.image -%}
   {%- assign show_image = true -%}
 {%- endif -%}
@@ -23,9 +21,7 @@
 {%- capture is_section_visible -%}{%- render 'block-market-check', block: section -%}{%- endcapture -%}
 {%- if is_section_visible contains 'true' -%}
   {%- if show_image -%}
-    
-{%- render 'section-color-css' -%}
-<style>
+    <style>
       #shopify-section-{{ section.id }} {
         {%- if section.settings.full_width -%}
           --section-outer-spacing-block: 0;
@@ -403,68 +399,13 @@
       "id": "market_visibility",
       "label": "Market visibility",
       "options": [
-        {
-          "value": "all",
-          "label": "All"
-        },
-        {
-          "value": "denmark",
-          "label": "Denmark"
-        },
-        {
-          "value": "eu",
-          "label": "EU"
-        },
-        {
-          "value": "eu_non_european",
-          "label": "EU Non-European"
-        },
-        {
-          "value": "us_ca_mx",
-          "label": "US, CA & MX"
-        }
+        { "value": "all", "label": "All" },
+        { "value": "denmark", "label": "Denmark" },
+        { "value": "eu", "label": "EU" },
+        { "value": "eu_non_european", "label": "EU Non-European" },
+        { "value": "us_ca_mx", "label": "US, CA & MX" }
       ],
       "default": "all"
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ]
 }

@@ -1,11 +1,7 @@
 {%- if section.blocks.size > 0 -%}
   {%- render 'section-spacing-collapsing' -%}
 
-
-
-  
-{%- render 'section-color-css' -%}
-<style>
+  <style>
     #shopify-section-{{ section.id }} {
       {% if section.settings.remove_vertical_spacing %}--section-spacing-block: 0px;{% endif %}
       {% if section.settings.remove_horizontal_spacing %}--section-spacing-inline: 0px;{% endif %}
@@ -14,7 +10,6 @@
 
   <div {% render 'section-properties' %}>
     {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
       {%- render block -%}
     {%- endfor -%}
   </div>
@@ -26,9 +21,7 @@
   "class": "shopify-section--apps",
   "tag": "section",
   "disabled_on": {
-    "groups": [
-      "custom.overlay"
-    ]
+    "groups": ["custom.overlay"]
   },
   "settings": [
     {
@@ -68,36 +61,6 @@
       "type": "color",
       "id": "text_color",
       "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [

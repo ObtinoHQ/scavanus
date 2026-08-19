@@ -1,15 +1,11 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- comment -%}
 ------------------------------------------------------------------------------------------------------------------------
 CSS
 ------------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} .product-list {
     --product-list-gap: {% if section.settings.stack_products and section.settings.products_per_row_mobile == '2' %}var(--product-list-row-gap) var(--spacing-2){% else %}var(--product-list-row-gap) var(--product-list-column-gap){% endif %};
@@ -34,7 +30,7 @@ CSS
   }
 
   #shopify-section-{{ section.id }} product-card {
-    background: {{ section.settings.background | default: 'rgba(247, 245, 242, 1)' }};
+    background: rgba(247, 245, 242, 1);
     border-radius: 12px;
     overflow: hidden;
     padding: 20px;
@@ -293,9 +289,7 @@ LIQUID
   "class": "shopify-section--product-recommendations",
   "tag": "section",
   "enabled_on": {
-    "templates": [
-      "product"
-    ]
+    "templates": ["product"]
   },
   "settings": [
     {
@@ -341,18 +335,9 @@ LIQUID
       "id": "image_ratio",
       "label": "Product image ratio",
       "options": [
-        {
-          "value": "square",
-          "label": "Square (Figma)"
-        },
-        {
-          "value": "short",
-          "label": "Landscape (4:3)"
-        },
-        {
-          "value": "tall",
-          "label": "Portrait (2:3)"
-        }
+        { "value": "square", "label": "Square (Figma)" },
+        { "value": "short", "label": "Landscape (4:3)" },
+        { "value": "tall", "label": "Portrait (2:3)" }
       ],
       "default": "square"
     },
@@ -435,26 +420,6 @@ LIQUID
       "type": "color",
       "id": "product_card_text_color",
       "label": "Product card text"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "presets": [

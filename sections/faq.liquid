@@ -1,11 +1,7 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- assign text_position = section.settings.text_position -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} {
     --section-stack-intro: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
@@ -104,7 +100,6 @@
       <div class="section-stack__main" >
         <div {% render 'surface', class: 'accordion-box rounded', background: section.settings.accordion_background, text_color: section.settings.accordion_text_color, background_fallback: 'bg-secondary' %}>
           {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
             {%- if block.settings.title != blank and block.settings.content != blank -%}
               {%- capture accordion_content -%}
                 <div class="prose">{{ block.settings.content }}</div>
@@ -150,10 +145,7 @@
   "class": "shopify-section--faq",
   "tag": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "groups": ["header", "custom.overlay"]
   },
   "blocks": [
     {
@@ -171,30 +163,6 @@
           "id": "content",
           "label": "Answer",
           "default": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }
@@ -334,16 +302,6 @@
       "type": "color",
       "id": "accordion_text_color",
       "label": "Accordion text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "presets": [

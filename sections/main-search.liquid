@@ -1,6 +1,4 @@
 {%- if section.settings.show_filters and search.filters.size > 0 -%}
-
-
   {%- assign show_filters = true -%}
 {%- else -%}
   {%- assign show_filters = false -%}
@@ -26,8 +24,6 @@
   </form>
 {%- endcapture -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   {%- assign card_blends = false -%}
 
@@ -255,7 +251,7 @@
   "class": "shopify-section--main-search",
   "tag": "section",
   "settings": [
-    {
+      {
       "type": "range",
       "id": "products_per_page",
       "label": "Products per page",
@@ -344,56 +340,6 @@
       "id": "open_first_filter_group",
       "label": "Open first group by default",
       "default": false
-    },
-    {
-      "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set."
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ]
 }

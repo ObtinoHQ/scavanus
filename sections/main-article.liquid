@@ -1,13 +1,9 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- assign background_color = article.metafields.banner.background_color.value | default: section.settings.banner_background -%}
 {%- assign text_color = article.metafields.banner.text_color.value | default: section.settings.banner_text_color -%}
 {%- assign article_image = section.settings.image | default: article.image -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} .article-banner {
     --article-banner-background: {%- if background_color != blank -%}{{ background_color.rgb }}{%- else -%}var(--text-color) / 0.05{%- endif -%};
@@ -128,7 +124,6 @@
     </div>
 
     {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
       {%- case block.type -%}
         {%- when 'navigation' -%}
           {%- render 'article-navigation', show_date: section.settings.show_date, show_author: section.settings.show_author, show_comments_count: section.settings.show_comments_count, block_attributes: block.shopify_attributes -%}
@@ -256,89 +251,13 @@
         }
       ],
       "default": "750px"
-    },
-    {
-      "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set."
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "blocks": [
     {
       "type": "navigation",
       "name": "Prev/next blog posts",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "comments",
@@ -363,30 +282,6 @@
           "max": 50,
           "step": 5,
           "default": 5
-        },
-        {
-          "type": "header",
-          "content": "Colors"
-        },
-        {
-          "type": "color",
-          "id": "background",
-          "label": "Background"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "button_background",
-          "label": "Button background"
-        },
-        {
-          "type": "color",
-          "id": "button_text_color",
-          "label": "Button text"
         }
       ]
     }

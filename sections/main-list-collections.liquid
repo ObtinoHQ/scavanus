@@ -1,6 +1,4 @@
 {%- if collections.size == 0 -%}
-
-
   <div class="empty-state">
     <div class="empty-state__icon-wrapper">
       {%- render 'icon' with 'picto-box', width: 32, height: 32, stroke_width: 1 -%}
@@ -15,9 +13,7 @@
     </div>
   </div>
 {%- else -%}
-  
-{%- render 'section-color-css' -%}
-<style>
+  <style>
     #shopify-section-{{ section.id }} .collection-list {
       --collection-list-grid: auto / repeat({{ section.settings.collections_per_row_mobile | times: 1 }}, minmax(0, 1fr));
     }
@@ -140,46 +136,6 @@
       "step": 1,
       "unit": "%",
       "default": 30
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background"
-    },
-    {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ]
 }

@@ -1,15 +1,11 @@
 {%- render 'section-spacing-collapsing' -%}
 
-
-
 {%- comment -%}
 ------------------------------------------------------------------------------------------------------------------------
 CSS
 ------------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
-
-{%- render 'section-color-css' -%}
 <style>
   #shopify-section-{{ section.id }} {
     --media-grid-row-height: {{ section.settings.mobile_row_height }}px;
@@ -22,7 +18,6 @@ CSS
   }
 
   {%- for block in section.blocks -%}
-            {%- render 'block-color-css', block: block -%}
     #media-grid-{{ block.id }} {
       --content-over-media-overlay: {{ block.settings.overlay_color.rgb }} /{{ block.settings.overlay_opacity | divided_by: 100.0 }};
 
@@ -118,13 +113,8 @@ LIQUID
   "class": "shopify-section--media-grid",
   "tag": "section",
   "disabled_on": {
-    "templates": [
-      "password"
-    ],
-    "groups": [
-      "header",
-      "custom.overlay"
-    ]
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
   },
   "max_blocks": 15,
   "blocks": [
@@ -373,10 +363,7 @@ LIQUID
         {
           "type": "video_url",
           "id": "external_video_url",
-          "accept": [
-            "vimeo",
-            "youtube"
-          ],
+          "accept": ["vimeo", "youtube"],
           "label": "Video URL",
           "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
         },
@@ -658,41 +645,6 @@ LIQUID
       "type": "color_background",
       "id": "background_gradient",
       "label": "Background gradient"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading"
-    },
-    {
-      "type": "color_background",
-      "id": "heading_gradient",
-      "label": "Heading gradient"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button background"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text"
-    },
-    {
-      "type": "color",
-      "id": "card_background",
-      "label": "Card/block background"
-    },
-    {
-      "type": "color",
-      "id": "card_text_color",
-      "label": "Card/block text"
     }
   ],
   "presets": [
