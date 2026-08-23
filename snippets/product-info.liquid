@@ -589,6 +589,8 @@ Supported variables
               {%- render 'icon' with 'share' -%} {{- 'general.social.share' | t -}}
             </button>
           </div>
+          {%- when 'countdown_timer' -%}
+  {%- render 'countdown-timer', end_date: block.settings.end_date, evergreen_hours: block.settings.evergreen_hours, prefix_text: block.settings.prefix_text, bg_color: block.settings.bg_color, text_color: block.settings.text_color, block: block -%}
       {%- endcase -%}
     {%- endcapture -%}
 
