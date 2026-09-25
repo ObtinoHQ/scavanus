@@ -286,27 +286,38 @@
               assign step_video = block.video.value | default: block.video
               assign step_image = block.image.value | default: block.image
               assign step_title = block.title.value | default: block.title
+              assign step_external_video = nil
             else
               assign step_video = block.settings.video
               assign step_image = block.settings.image
               assign step_title = block.settings.title
+              assign step_external_video = block.settings.external_video_url
             endif
           -%}
 
           {%- if step_video != blank -%}
-            {% assign video_url = step_video | file_url %}
-            <video 
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-            >
-              <source src="{{ video_url }}" type="video/mp4">
-            </video>
-       {%- elsif step_image != blank -%}
-  {{ step_image | image_url: width: 2000 | image_tag: loading: 'lazy', widths: '500,700,900,1100,1400,1800', sizes: '(max-width: 999px) 100vw, 52vw', alt: step_title | escape }}
-{%- else -%}
+            {{ step_video | video_tag: autoplay: true, muted: true, loop: true, playsinline: true, controls: false, preload: 'metadata', image_size: '2000x' }}
+          {%- elsif step_external_video != blank -%}
+            {%- if step_external_video.type == 'youtube' -%}
+              <iframe
+                data-step-external-video
+                data-src="https://www.youtube.com/embed/{{ step_external_video.id }}?playsinline=1&autoplay=1&mute=1&rel=0&modestbranding=1"
+                title="{{ step_title | escape }}"
+                allow="autoplay; encrypted-media"
+                allowfullscreen="allowfullscreen"
+              ></iframe>
+            {%- elsif step_external_video.type == 'vimeo' -%}
+              <iframe
+                data-step-external-video
+                data-src="https://player.vimeo.com/video/{{ step_external_video.id }}?autoplay=1&muted=1&title=0&byline=0&portrait=0"
+                title="{{ step_title | escape }}"
+                allow="autoplay; encrypted-media"
+                allowfullscreen="allowfullscreen"
+              ></iframe>
+            {%- endif -%}
+          {%- elsif step_image != blank -%}
+            {{ step_image | image_url: width: 2000 | image_tag: loading: 'lazy', widths: '500,700,900,1100,1400,1800', sizes: '(max-width: 999px) 100vw, 52vw', alt: step_title | escape }}
+          {%- else -%}
             {{ 'image' | placeholder_svg_tag: 'placeholder' }}
           {%- endif -%}
         </template>
